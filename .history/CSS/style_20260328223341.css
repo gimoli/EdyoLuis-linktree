@@ -4,12 +4,16 @@
     box-sizing: border-box;
 }
 
-/* fundo com imagem */
+/* fundo mais "jogo" */
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 body {
     font-family: 'Press Start 2P', cursive;
-
-    background: url('../assets/fundo.png') no-repeat center/cover;
-
+    background: #0f0f0f;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -17,42 +21,10 @@ body {
     padding: 20px;
     color: #fff;
 
-    position: relative;
-}
+    background: linear-gradient(270deg, #0f0f0f, #1a1a1a, #0f0f0f);
+  background-size: 600% 600%;
+  animation: bgMove 10s ease infinite;
 
-/* overlay preto com degradê animado */
-body::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: linear-gradient(
-        120deg,
-        rgba(0,0,0,0.98),
-        rgba(0,0,0,0.9),
-        rgba(0,0,0,0.7),
-        rgba(0,0,0,0.95)
-    );
-
-    background-size: 300% 300%;
-
-    animation: ondas 8s ease-in-out infinite;
-
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* animação do overlay */
-@keyframes ondas {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 /* container */
@@ -60,9 +32,6 @@ body::before {
     text-align: center;
     width: 90%;
     max-width: 1200px;
-
-    position: relative;
-    z-index: 1;
 }
 
 /* perfil */
@@ -70,7 +39,7 @@ body::before {
     margin-bottom: 40px;
 }
 
-/* avatar */
+/* avatar com borda pixel */
 .avatar {
     width: 200px;
     height: 200px;
@@ -85,28 +54,36 @@ h5 {
     margin-bottom: 14px;
 }
 
+@keyframes piscar {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 /* bio */
 .bio {
     font-size: 10px;
     color: #aaa;
     margin-bottom: 20px;
+    
 }
 
 /* links */
 .links {
-    display: flex;
     justify-content: center;
+    display: flex;
+    flex-direction: row;
     gap: 30px;
-    flex-wrap: nowrap; /* todos lado a lado */
+    
 }
 
-/* botão */
+/* botão 8-bit */
 .link {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* centraliza tudo */
 
-    gap: 10px;
+    gap: 10px; /* espaço entre ícone e texto */
     background: #222;
     color: #ffffff;
 
@@ -129,16 +106,15 @@ h5 {
 .link:hover {
     background: #fff;
     color: #000;
-    transform: scale(1.08);
+    transform: scale(1.25); 
 }
 
-/* clique */
+/* clique estilo botão de jogo */
 .link:active {
     transform: translate(4px, 4px);
     box-shadow: 2px 2px 0 #000;
 }
 
-/* ícones */
 .link i {
-    font-size: 28px;
+  font-size: 28px;
 }
