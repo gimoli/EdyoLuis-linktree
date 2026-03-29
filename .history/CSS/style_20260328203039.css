@@ -19,8 +19,8 @@ body {
 /* container */
 .container {
     text-align: center;
-    width: 90%;
-    max-width: 1200px;
+    max-width: 500px;
+    width: 100%;
 }
 
 /* perfil */
@@ -37,16 +37,9 @@ body {
 }
 
 /* título */
-h5 {
+h1 {
     font-size: 14px;
-    color: #c21717;
-    margin-bottom: 14px;
-}
-
-@keyframes piscar {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+    margin-bottom: 10px;
 }
 
 /* bio */
@@ -54,7 +47,6 @@ h5 {
     font-size: 10px;
     color: #aaa;
     margin-bottom: 20px;
-    
 }
 
 /* links */
@@ -68,16 +60,10 @@ h5 {
 
 /* botão 8-bit */
 .link {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* centraliza tudo */
-
-    gap: 10px; /* espaço entre ícone e texto */
     background: #222;
     color: #ffffff;
 
-    width: 200px;
-    height: 40px;
+    wi
 
     padding: 10px;
     text-decoration: none;
@@ -95,7 +81,6 @@ h5 {
 .link:hover {
     background: #fff;
     color: #000;
-    transform: scale(1.25); 
 }
 
 /* clique estilo botão de jogo */

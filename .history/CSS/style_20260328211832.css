@@ -43,12 +43,6 @@ h5 {
     margin-bottom: 14px;
 }
 
-@keyframes piscar {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 /* bio */
 .bio {
     font-size: 10px;

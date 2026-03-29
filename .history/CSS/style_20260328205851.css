@@ -41,12 +41,7 @@ h5 {
     font-size: 14px;
     color: #c21717;
     margin-bottom: 14px;
-}
-
-@keyframes piscar {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+    padding: 12;
 }
 
 /* bio */
@@ -54,7 +49,6 @@ h5 {
     font-size: 10px;
     color: #aaa;
     margin-bottom: 20px;
-    
 }
 
 /* links */
@@ -95,7 +89,6 @@ h5 {
 .link:hover {
     background: #fff;
     color: #000;
-    transform: scale(1.25); 
 }
 
 /* clique estilo botão de jogo */

@@ -43,18 +43,17 @@ h5 {
     margin-bottom: 14px;
 }
 
-@keyframes piscar {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 /* bio */
+@keyframes piscarSuave {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+} 
+
 .bio {
     font-size: 10px;
     color: #aaa;
     margin-bottom: 20px;
-    
+    animation: piscar 1s steps(2, start) infinite;
 }
 
 /* links */
