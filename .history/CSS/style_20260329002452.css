@@ -154,3 +154,45 @@ footer {
     
 }
 
+/* Container que ocupa a tela toda atrás de tudo */
+.pixel-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Fica atrás dos botões */
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Estilo base do pixel */
+.pixel-rain span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ff0044; /* Cor vermelha do seu destaque */
+  opacity: 0.6;
+  animation: fall linear infinite;
+}
+
+/* Animação de queda */
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Variações de posição e velocidade para cada pixel */
+.p-1 { left: 10%; animation-duration: 5s; animation-delay: 0s; }
+.p-2 { left: 30%; animation-duration: 7s; animation-delay: 2s; background: #fff; }
+.p-3 { left: 55%; animation-duration: 4s; animation-delay: 1s; width: 6px; height: 6px; }
+.p-4 { left: 80%; animation-duration: 6s; animation-delay: 3s; background: #fff; }
+.p-5 { left: 95%; animation-duration: 8s; animation-delay: 0.5s; }

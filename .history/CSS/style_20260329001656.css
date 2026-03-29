@@ -145,7 +145,7 @@ h5 {
 
 footer {
     position: absolute;
-    font-size: 8px;
+    font
     inset: 0;
     display: flex;
     justify-content: center;
@@ -153,4 +153,3 @@ footer {
     margin-top: 700px;
     
 }
-

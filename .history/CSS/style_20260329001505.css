@@ -145,12 +145,10 @@ h5 {
 
 footer {
     position: absolute;
-    font-size: 8px;
     inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 700px;
+    top
     
 }
-
