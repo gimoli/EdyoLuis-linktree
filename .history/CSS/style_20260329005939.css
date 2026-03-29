@@ -1,0 +1,185 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações do Corpo */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: url('../assets/fundo.png') no-repeat center center/cover fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Overlay Animado */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        rgba(0,0,0,0.98),
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.95)
+    );
+    background-size: 300% 300%;
+    animation: ondas 8s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes ondas {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container Principal */
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    z-index: 2;
+    padding-bottom: 60px; /* Espaço para o footer */
+}
+
+/* Perfil */
+.profile {
+    margin-bottom: 40px;
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border-radius: 10px; /* Leve arredondado estilo pixel */
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-size: 12px;
+    color: #c21717;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.bio {
+    font-size: 10px;
+    color: #aaa;
+}
+
+/* Links Layout */
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ajusta para mobile automaticamente */
+}
+
+/* Botões */
+.link {
+    display: flex;
+    flex-direction: column; /* Ícone em cima do texto opcional, ou row */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #222;
+    color: #ffffff;
+    width: 160px;
+    min-height: 80px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 10px;
+    border-radius: 8px;
+    border: 3px solid #fff;
+    box-shadow: 6px 6px 0 #000;
+    transition: all 0.2s ease;
+}
+
+.link i {
+    font-size: 24px;
+}
+
+/* Hover e Efeitos */
+.link:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.05);
+}
+
+.link:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0 #000;
+}
+
+/* Chuva de Pixels */
+.pixel-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.pixel-rain span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0044;
+    box-shadow: 2px 2px 0px #000;
+    top: -20px;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        top: -20px;
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        top: 100vh;
+        transform: translateX(20px) rotate(360deg);
+        opacity: 0.2;
+    }
+}
+
+/* Rodapé */
+.footer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 8px;
+    padding: 20px;
+    color: #777;
+    z-index: 2;
+}
+
+/* Responsividade Básica */
+@media (max-width: 600px) {
+    .links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .link {
+        width: 80%;
+        flex-direction: row;
+        min-height: 50px;
+    }
+}
