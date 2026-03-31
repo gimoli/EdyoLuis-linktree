@@ -7,13 +7,16 @@
 /* fundo com imagem */
 body {
     font-family: 'Press Start 2P', cursive;
+
     background: url('../assets/fundo.png') no-repeat center/cover;
+
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     color: #fff;
+
     position: relative;
 }
 
@@ -22,6 +25,7 @@ body::before {
     content: "";
     position: absolute;
     inset: 0;
+
     background: linear-gradient(
         120deg,
         rgba(0,0,0,0.98),
@@ -29,17 +33,26 @@ body::before {
         rgba(0,0,0,0.7),
         rgba(0,0,0,0.95)
     );
+
     background-size: 300% 300%;
+
     animation: ondas 8s ease-in-out infinite;
+
     z-index: 0;
     pointer-events: none;
 }
 
 /* animação do overlay */
 @keyframes ondas {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* container */
@@ -47,6 +60,7 @@ body::before {
     text-align: center;
     width: 90%;
     max-width: 1200px;
+
     position: relative;
     z-index: 1;
 }
@@ -83,7 +97,7 @@ h5 {
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap; /* todos lado a lado */
 }
 
 /* botão */
@@ -91,17 +105,23 @@ h5 {
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 10px;
     background: #222;
     color: #ffffff;
+
     width: 200px;
     height: 40px;
+
     padding: 10px;
     text-decoration: none;
     font-size: 12.5px;
+
     border-radius: 90px;
     border: 2px solid #fff;
+
     box-shadow: 6px 6px 0 #000;
+
     transition: all 0.1s ease;
 }
 
@@ -129,24 +149,32 @@ h5 {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 0; /* Tente mudar para 9999 só para testar se aparece na frente de tudo, depois voltamos para -1 */
   pointer-events: none;
 }
 
 .pixel-rain span {
   position: absolute;
-  display: block;
+  display: block; /* IMPORTANTE: Faz o quadrado existir fisicamente */
   width: 10px;
   height: 10px;
-  background-color: #ff0044;
-  box-shadow: 2px 2px 0px #000;
+  background-color: #ff0044; /* Cor vermelha de destaque */
+  box-shadow: 2px 2px 0px #000; /* Sombreada 8-bit */
   top: -20px;
   animation: fall 5s linear infinite;
 }
 
 @keyframes fall {
-  0% { top: -20px; transform: translateX(0) rotate(0deg); opacity: 1; }
-  100% { top: 100vh; transform: translateX(20px) rotate(360deg); opacity: 0.2; }
+  0% {
+    top: -20px;
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    top: 100vh;
+    transform: translateX(20px) rotate(360deg);
+    opacity: 0.2;
+  }
 }
 
 footer {
@@ -157,34 +185,6 @@ footer {
     justify-content: center;
     align-items: center;
     margin-top: 700px;
+    
 }
 
-/* --- ADAPTAÇÃO APENAS PARA MOBILE --- */
-@media (max-width: 768px) {
-    body {
-        padding: 40px 20px;
-        align-items: flex-start; /* Evita que o conteúdo corte no topo em telas muito pequenas */
-    }
-
-    .links {
-        flex-direction: column; /* Empilha os botões */
-        align-items: center;
-        gap: 20px;
-    }
-
-    .link {
-        width: 100%; /* Botão ocupa a largura disponível */
-        max-width: 250px; /* Limite de largura para não ficar gigante */
-    }
-
-    .avatar {
-        width: 150px;
-        height: 150px;
-    }
-
-    footer {
-        position: relative; /* No mobile, o footer segue abaixo do conteúdo para não sobrepor */
-        margin-top: 40px;
-        inset: auto;
-    }
-}

@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* fundo com imagem */
 body {
     font-family: 'Press Start 2P', cursive;
     background: url('../assets/fundo.png') no-repeat center/cover;
@@ -15,9 +14,9 @@ body {
     padding: 20px;
     color: #fff;
     position: relative;
+    overflow-x: hidden;
 }
 
-/* overlay preto com degradê animado */
 body::before {
     content: "";
     position: absolute;
@@ -35,58 +34,53 @@ body::before {
     pointer-events: none;
 }
 
-/* animação do overlay */
 @keyframes ondas {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* container */
 .container {
     text-align: center;
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     position: relative;
     z-index: 1;
 }
 
-/* perfil */
 .profile {
     margin-bottom: 40px;
 }
 
-/* avatar */
 .avatar {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
+    max-width: 50vw;
+    max-height: 50vw;
     margin-bottom: 35px;
     object-fit: cover;
 }
 
-/* título */
 h5 {
     font-size: 14px;
     color: #c21717;
     margin-bottom: 14px;
 }
 
-/* bio */
 .bio {
     font-size: 10px;
     color: #aaa;
     margin-bottom: 20px;
+    padding: 0 10px;
 }
 
-/* links */
 .links {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    flex-wrap: nowrap; 
+    gap: 20px;
+    flex-wrap: wrap; 
 }
 
-/* botão */
 .link {
     display: flex;
     align-items: center;
@@ -95,96 +89,85 @@ h5 {
     background: #222;
     color: #ffffff;
     width: 200px;
-    height: 40px;
+    min-height: 45px;
     padding: 10px;
     text-decoration: none;
-    font-size: 12.5px;
+    font-size: 11px;
     border-radius: 90px;
     border: 2px solid #fff;
     box-shadow: 6px 6px 0 #000;
     transition: all 0.1s ease;
 }
 
-/* hover */
 .link:hover {
     background: #fff;
     color: #000;
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
-/* clique */
 .link:active {
     transform: translate(4px, 4px);
     box-shadow: 2px 2px 0 #000;
 }
 
-/* ícones */
 .link i {
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .pixel-rain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .pixel-rain span {
-  position: absolute;
-  display: block;
-  width: 10px;
-  height: 10px;
-  background-color: #ff0044;
-  box-shadow: 2px 2px 0px #000;
-  top: -20px;
-  animation: fall 5s linear infinite;
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0044;
+    box-shadow: 2px 2px 0px #000;
+    top: -20px;
+    animation: fall 5s linear infinite;
 }
 
 @keyframes fall {
-  0% { top: -20px; transform: translateX(0) rotate(0deg); opacity: 1; }
-  100% { top: 100vh; transform: translateX(20px) rotate(360deg); opacity: 0.2; }
+    0% { top: -20px; transform: translateX(0) rotate(0deg); opacity: 1; }
+    100% { top: 100vh; transform: translateX(20px) rotate(360deg); opacity: 0.2; }
 }
 
 footer {
-    position: absolute;
+    position: relative;
     font-size: 8px;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 700px;
+    text-align: center;
+    margin-top: 50px;
+    width: 100%;
+    z-index: 1;
 }
 
-/* --- ADAPTAÇÃO APENAS PARA MOBILE --- */
-@media (max-width: 768px) {
-    body {
-        padding: 40px 20px;
-        align-items: flex-start; /* Evita que o conteúdo corte no topo em telas muito pequenas */
-    }
 
+@media (max-width: 768px) {
     .links {
-        flex-direction: column; /* Empilha os botões */
+        flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 15px;
     }
 
     .link {
-        width: 100%; /* Botão ocupa a largura disponível */
-        max-width: 250px; /* Limite de largura para não ficar gigante */
+        width: 100%;
+        max-width: 280px;
+    }
+
+    h5 {
+        font-size: 12px;
     }
 
     .avatar {
         width: 150px;
         height: 150px;
-    }
-
-    footer {
-        position: relative; /* No mobile, o footer segue abaixo do conteúdo para não sobrepor */
-        margin-top: 40px;
-        inset: auto;
     }
 }
