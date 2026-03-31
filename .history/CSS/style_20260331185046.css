@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* fundo com imagem */
 body {
     font-family: 'Press Start 2P', cursive;
     background: url('../assets/fundo.png') no-repeat center/cover;
@@ -16,6 +17,7 @@ body {
     position: relative;
 }
 
+/* overlay preto com degradê animado */
 body::before {
     content: "";
     position: absolute;
@@ -33,12 +35,14 @@ body::before {
     pointer-events: none;
 }
 
+/* animação do overlay */
 @keyframes ondas {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
+/* container */
 .container {
     text-align: center;
     width: 90%;
@@ -47,10 +51,12 @@ body::before {
     z-index: 1;
 }
 
+/* perfil */
 .profile {
     margin-bottom: 40px;
 }
 
+/* avatar */
 .avatar {
     width: 200px;
     height: 200px;
@@ -58,18 +64,21 @@ body::before {
     object-fit: cover;
 }
 
+/* título */
 h5 {
     font-size: 14px;
     color: #c21717;
     margin-bottom: 14px;
 }
 
+/* bio */
 .bio {
     font-size: 10px;
     color: #aaa;
     margin-bottom: 20px;
 }
 
+/* links */
 .links {
     display: flex;
     justify-content: center;
@@ -77,6 +86,7 @@ h5 {
     flex-wrap: nowrap; 
 }
 
+/* botão */
 .link {
     display: flex;
     align-items: center;
@@ -95,17 +105,20 @@ h5 {
     transition: all 0.1s ease;
 }
 
+/* hover */
 .link:hover {
     background: #fff;
     color: #000;
     transform: scale(1.08);
 }
 
+/* clique */
 .link:active {
     transform: translate(4px, 4px);
     box-shadow: 2px 2px 0 #000;
 }
 
+/* ícones */
 .link i {
     font-size: 28px;
 }
@@ -137,57 +150,41 @@ h5 {
 }
 
 footer {
-    margin-top: 30px;
-    font-size: 10px;
-    text-align: center;
-    color: #aaa;
+    position: absolute;
+    font-size: 8px;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 700px;
 }
 
-/* RESPONSIVO PARA MOBILE */
+/* --- ADAPTAÇÃO APENAS PARA MOBILE --- */
 @media (max-width: 768px) {
-
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .avatar {
-        width: 140px;
-        height: 140px;
-    }
-
-    h2 {
-        font-size: 16px;
-    }
-
-    h5 {
-        font-size: 10px;
-    }
-
-    .bio {
-        font-size: 8px;
+    body {
+        padding: 40px 20px;
+        align-items: flex-start; /* Evita que o conteúdo corte no topo em telas muito pequenas */
     }
 
     .links {
-        flex-direction: column;
+        flex-direction: column; /* Empilha os botões */
         align-items: center;
-        gap: 15px;
+        gap: 20px;
     }
 
     .link {
-        width: 90%;
-        max-width: 300px;
-        height: 45px;
-        font-size: 10px;
+        width: 100%; /* Botão ocupa a largura disponível */
+        max-width: 250px; /* Limite de largura para não ficar gigante */
     }
 
-    .link i {
-        font-size: 20px;
+    .avatar {
+        width: 150px;
+        height: 150px;
     }
 
     footer {
-        margin-top: 25px;
-        font-size: 8px;
-        padding: 0 10px;
+        position: relative; /* No mobile, o footer segue abaixo do conteúdo para não sobrepor */
+        margin-top: 40px;
+        inset: auto;
     }
 }

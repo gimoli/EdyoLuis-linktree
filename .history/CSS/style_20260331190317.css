@@ -137,10 +137,13 @@ h5 {
 }
 
 footer {
-    margin-top: 30px;
-    font-size: 10px;
-    text-align: center;
-    color: #aaa;
+    position: absolute;
+    font-size: 8px;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 700px;
 }
 
 /* RESPONSIVO PARA MOBILE */
@@ -169,13 +172,13 @@ footer {
     }
 
     .links {
-        flex-direction: column;
+        flex-direction: column; /* empilha os links */
         align-items: center;
         gap: 15px;
     }
 
     .link {
-        width: 90%;
+        width: 90%; /* ocupa quase toda a largura */
         max-width: 300px;
         height: 45px;
         font-size: 10px;
@@ -186,8 +189,9 @@ footer {
     }
 
     footer {
-        margin-top: 25px;
-        font-size: 8px;
-        padding: 0 10px;
+        position: relative;
+        margin-top: 40px;
+        font-size: 7px;
+        text-align: center;
     }
 }

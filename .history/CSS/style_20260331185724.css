@@ -137,57 +137,44 @@ h5 {
 }
 
 footer {
-    margin-top: 30px;
-    font-size: 10px;
-    text-align: center;
-    color: #aaa;
+    position: absolute;
+    font-size: 8px;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 700px;
 }
 
-/* RESPONSIVO PARA MOBILE */
+/* --- APENAS MOBILE --- */
 @media (max-width: 768px) {
-
-    .container {
-        width: 100%;
-        padding: 10px;
+    .container, .profile, .links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .avatar {
-        width: 140px;
-        height: 140px;
-    }
-
-    h2 {
-        font-size: 16px;
-    }
-
-    h5 {
-        font-size: 10px;
-    }
-
-    .bio {
-        font-size: 8px;
+    /* Traz o rodapé (contatos) para o fluxo normal abaixo do perfil */
+    footer {
+        position: relative;
+        margin-top: 10px; /* Espaço logo abaixo do Edyo Luis / Bio */
+        margin-bottom: 30px;
+        inset: auto;
+        flex-direction: column;
     }
 
     .links {
-        flex-direction: column;
-        align-items: center;
         gap: 15px;
     }
 
     .link {
-        width: 90%;
-        max-width: 300px;
-        height: 45px;
-        font-size: 10px;
+        width: 100%;
+        max-width: 260px;
     }
 
-    .link i {
-        font-size: 20px;
-    }
-
-    footer {
-        margin-top: 25px;
-        font-size: 8px;
-        padding: 0 10px;
+    .avatar {
+        width: 150px;
+        height: 150px;
     }
 }

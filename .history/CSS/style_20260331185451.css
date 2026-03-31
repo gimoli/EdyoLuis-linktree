@@ -137,57 +137,65 @@ h5 {
 }
 
 footer {
-    margin-top: 30px;
-    font-size: 10px;
-    text-align: center;
-    color: #aaa;
+    position: absolute;
+    font-size: 8px;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 700px;
 }
 
-/* RESPONSIVO PARA MOBILE */
+/* --- AJUSTES EXCLUSIVOS PARA MOBILE --- */
 @media (max-width: 768px) {
+    body {
+        align-items: center;
+        padding: 40px 15px;
+    }
 
     .container {
-        width: 100%;
-        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Avatar e Textos Centralizados */
+    .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
     }
 
     .avatar {
-        width: 140px;
-        height: 140px;
+        width: 160px;
+        height: 160px;
     }
 
-    h2 {
-        font-size: 16px;
+    /* Força os contatos (footer) a subirem para baixo da bio */
+    footer {
+        position: static; /* Remove o posicionamento absoluto do PC */
+        margin-top: 0;
+        margin-bottom: 30px;
+        order: -1; /* Se o footer estiver fora do container, ignore isso. Se estiver dentro, ele sobe */
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 9px;
+        line-height: 1.4;
     }
 
-    h5 {
-        font-size: 10px;
-    }
-
-    .bio {
-        font-size: 8px;
-    }
-
+    /* Links um abaixo do outro */
     .links {
         flex-direction: column;
         align-items: center;
         gap: 15px;
+        width: 100%;
     }
 
     .link {
-        width: 90%;
-        max-width: 300px;
+        width: 100%;
+        max-width: 280px;
         height: 45px;
-        font-size: 10px;
-    }
-
-    .link i {
-        font-size: 20px;
-    }
-
-    footer {
-        margin-top: 25px;
-        font-size: 8px;
-        padding: 0 10px;
     }
 }
