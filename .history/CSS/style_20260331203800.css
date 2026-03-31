@@ -189,5 +189,6 @@ footer {
         margin-top: 25px;
         font-size: 8px;
         padding: 0 10px;
+        gap:100px;
     }
 }
