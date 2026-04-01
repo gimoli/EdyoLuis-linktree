@@ -137,7 +137,7 @@ h5 {
 }
 
 footer {
-    margin: 50px;
+    padd-top: 30px;
     font-size: 10px;
     text-align: center;
     color: #aaa;
