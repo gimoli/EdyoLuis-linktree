@@ -31,7 +31,7 @@ Acesse o projeto funcionando online:
 ---
 
 ## 🚀 Status
-⌛ Em desenvolvimento 
+⌛ Concluído
 
 ---
 
